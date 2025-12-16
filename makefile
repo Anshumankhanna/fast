@@ -7,7 +7,7 @@ SRC = src/main.c                        # Source file
 all: $(TARGET)
 
 status:
-	git status -sb --ignored
+	git status -s --ignored
 
 # Target to compile the C program
 $(TARGET): $(SRC)

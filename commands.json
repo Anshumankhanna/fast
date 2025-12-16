@@ -1,63 +1,186 @@
 {
-	"edit": {
-		"dir": "D:/AK/CLI/fast/",
-		"file": "src/main.c",
-		"terminals": ["git-bash"]
+	"vars": {
+		"browsers": ["brave", "chrome"],
+		"terminals": ["git-bash", "powershell", "cmd"],
+		"dirs": [
+			{
+				"alias": "fast",
+				"dir": "D:/AK/CLI/fast"
+			}
+		]
 	},
-	"commands": {
-		"dir": "D:/AK/CLI/fast/",
-		"file": "bin/commands.txt",
-		"terminals": []
-	},
-	"lc": {
-		"url": "https://leetcode.com/problemset/"
-	},
-	"mt": {
-		"url": "C:/Users/Nishchay/Desktop/Monkeytype.lnk"
-	},
-	"typerush": {
-		"url": "https://typerush.com/"
-	},
-	"overleaf": {
-		"url": "https://overleaf.com/"
-	},
-	"mail": {
-		"url": "https://mail.google.com/mail/u/1/#inbox"
-	},
-	"mail-compose": {
-		"url": "https://mail.google.com/mail/u/1/#inbox?compose=new"
-	},
-	"notes": {
-		"url": "https://keep.google.com/u/0/"
-	},
-	"youtube": {
-		"url": "https://youtube.com/"
-	},
-	"ex": {
-		"url": "https://excalidraw.com/"
-	},
-	"shutdown": "shutdown /s /t 0",
-	"edit-nvim": {
-		"dir": "C:/Users/Nishchay/AppData/Local/nvim/",
-		"file": null,
-		"terminals": ["git-bash"]
-	},
-	"portfolio": {
-		"dir": "D:/AK/Full Stack/portfolio/",
-		"file": null,
-		"terminals": ["powershell", "git-bash"]
-	},
-	"blog": {
-		"dir": "D:/AK/Blogs/",
-		"file": null,
-		"terminals": ["git-bash"]
-	},
-	"question": {
-		"url": "https://joinenginuity.com/question-of-day"
-	},
-	"raa": {
-		"dir": "D:/AK/Full Stack/raa/",
-		"file": null,
-		"terminals": ["git-bash"]
-	}
+	"aliases": [
+		{
+			"alias": "edit",
+			"url": null,
+			"dir": "$fast",
+			"appData": [
+				{
+					"app": "git-bash",
+					"args": null
+				},
+				{
+					"app": "nvim",
+					"args": ["src/main.c"]
+				}
+			]
+		},
+		{
+			"alias": "edit-commands",
+			"url": null,
+			"dir": "$fast",
+			"appData": [
+				{
+					"app": "nvim",
+					"args": ["bin/commands.txt"]
+				}
+			]
+		},
+		{
+			"alias": "lc",
+			"url": "https://leetcode.com/problemset/",
+			"dir": null,
+			"appData": null
+		},
+		{
+			"alias": "x",
+			"url": "https://x.com/",
+			"dir": null,
+			"appData": null
+		},
+		{
+			"alias": "mt",
+			"url": null,
+			"dir": "C:/Users/Nishchay/Desktop/",
+			"appData": [
+				{
+					"app": "start",
+					"args": ["", "Monkeytype.lnk"]
+				}
+			]
+		},
+		{
+			"alias": "typerush",
+			"url": "https://typerush.com/account.html?play=1",
+			"dir": null,
+			"appData": null
+		},
+		{
+			"alias": "overleaf",
+			"url": "https://overleaf.com/project/",
+			"dir": null,
+			"appData": null
+		},
+		{
+			"alias": "mail",
+			"url": "https://mail.google.com/mail/u/1/#inbox",
+			"dir": null,
+			"appData": null
+		},
+		{
+			"alias": "mail-compose",
+			"url": "https://mail.google.com/mail/u/1/#inbox?compose=new",
+			"dir": null,
+			"appData": null
+		},
+		{
+			"alias": "notes",
+			"url": "https://keep.google.com/u/0/",
+			"dir": null,
+			"appData": null
+		},
+		{
+			"alias": "yt",
+			"url": "https://youtube.com/",
+			"dir": null,
+			"appData": null
+		},
+		{
+			"alias": "ex",
+			"url": "https://excalidraw.com/",
+			"dir": null,
+			"appData": null
+		},
+		{
+			"alias": "shutdown",
+			"url": null,
+			"dir": null,
+			"appData": [
+				{
+					"app": "shutdown",
+					"args": ["/s", "/t", "0"]
+				}
+			]
+		},
+		{
+			"alias": "edit-nvim",
+			"url": null,
+			"dir": "C:/Users/Nishchay/AppData/Local/nvim/",
+			"appData": [
+				{
+					"app": "git-bash",
+					"args": null
+				},
+				{
+					"app": "nvim",
+					"args": null
+				}
+			]
+		},
+		{
+			"alias": "portfolio",
+			"url": null,
+			"dir": "D:/AK/Full Stack/portfolio/",
+			"appData": [
+				{
+					"app": "powershell",
+					"args": null
+				},
+				{
+					"app": "git-bash",
+					"args": null
+				},
+				{
+					"app": "nvim",
+					"args": null
+				}
+			]
+		},
+		{
+			"alias": "blog",
+			"url": null,
+			"dir": "D:/AK/Blogs/",
+			"appData": [
+				{
+					"app": "git-bash",
+					"args": null
+				},
+				{
+					"app": "nvim",
+					"args": null
+				}
+			]
+		},
+		{
+			"alias": "question",
+			"url": "https://joinenginuity.com/question-of-day",
+			"dir": null,
+			"appData": null
+		},
+		{
+			"alias": "raa",
+			"url": null,
+			"dir": "D:/AK/Full Stack/raa/",
+			"appData": [
+				{
+					"app": "git-bash",
+					"args": null
+				},
+				{
+					"app": "nvim",
+					"args": null
+				}
+			]
+		}
+	]
 }
