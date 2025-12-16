@@ -54,18 +54,6 @@ func (aliases AliasMap) Run(alias string) (*exec.Cmd, error) {
 }
 
 func main() {
-	args := [...]string{"rm", "created_file.txt", "created_file1.txt", "created_file2.txt"}
-	if err := exec.Command(args[0], args[1:]...).Run(); err != nil {
-		log.Fatalf("Error: %s\n", err)
-		os.Exit(1)
-	}
-
-	if _, err := fmt.Println("Command executed successfully."); err != nil {
-		log.Fatalf("Error occurred in printing: %s\n", err)
-	}
-
-	return
-
 	const filepath = "commands.json"
 
 	jsonBytes, err := os.ReadFile(filepath)
