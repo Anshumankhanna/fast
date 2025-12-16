@@ -47,7 +47,7 @@ func (aliases AliasMap) Run(alias string) (*exec.Cmd, error) {
 		return nil, errors.New("Command not found.")
 	}
 	if commandData.Url != nil {
-		return exec.Command("cmd", "/C", "start", "brave", *commandData.Url), nil
+		return exec.Command("powershell", "start", "brave", *commandData.Url), nil
 	}
 
 	return nil, errors.New("Command has no URL.")
