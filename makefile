@@ -1,17 +1,12 @@
-CC = gcc                                # Compiler to use
-CFLAGS = -Wall -Wextra -O3              # Compiler flags
-TARGET = bin/fast                       # Name of the output executable
-SRC = src/main.c                        # Source file
+SRC = ./src
+TARGET = bin/fast-go
 
 # Default target
-all: $(TARGET)
+all:
+	go build -o $(TARGET) -race -v $(SRC)
 
 status:
 	git status -s --ignored
-
-# Target to compile the C program
-$(TARGET): $(SRC)
-	@$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
 
 # Clean target to remove the executable and object files
 clean:

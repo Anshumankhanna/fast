@@ -1,7 +1,7 @@
 {
 	"vars": {
-		"browsers": ["brave", "chrome"],
-		"terminals": ["git-bash", "powershell", "cmd"],
+		"browser": "brave",
+		"terminals": "git-bash",
 		"dirs": [
 			{
 				"alias": "fast",
@@ -12,12 +12,13 @@
 	"aliases": [
 		{
 			"alias": "edit",
-			"url": null,
+			"description": "Opens the source code of this CLI and a terminal window.",
+			"url": "",
 			"dir": "$fast",
 			"appData": [
 				{
 					"app": "git-bash",
-					"args": null
+					"args": []
 				},
 				{
 					"app": "nvim",
@@ -27,7 +28,8 @@
 		},
 		{
 			"alias": "edit-commands",
-			"url": null,
+			"description": "Opens the alias and commands list that we are following.",
+			"url": "",
 			"dir": "$fast",
 			"appData": [
 				{
@@ -38,19 +40,22 @@
 		},
 		{
 			"alias": "lc",
+			"description": "Opens leetcode problemset page.",
 			"url": "https://leetcode.com/problemset/",
-			"dir": null,
-			"appData": null
+			"dir": "",
+			"appData": []
 		},
 		{
 			"alias": "x",
+			"description": "Opens Twitter (now known as X).",
 			"url": "https://x.com/",
-			"dir": null,
-			"appData": null
+			"dir": "",
+			"appData": []
 		},
 		{
 			"alias": "mt",
-			"url": null,
+			"description": "Opens MonkeyType shortcut on desktop.",
+			"url": "",
 			"dir": "C:/Users/Nishchay/Desktop/",
 			"appData": [
 				{
@@ -61,50 +66,58 @@
 		},
 		{
 			"alias": "typerush",
+			"description": "Opens typerush",
 			"url": "https://typerush.com/account.html?play=1",
-			"dir": null,
-			"appData": null
+			"dir": "",
+			"appData": []
 		},
 		{
 			"alias": "overleaf",
+			"description": "Opens overleaf projects page.",
 			"url": "https://overleaf.com/project/",
-			"dir": null,
-			"appData": null
+			"dir": "",
+			"appData": []
 		},
 		{
 			"alias": "mail",
+			"description": "Opens my work email.",
 			"url": "https://mail.google.com/mail/u/1/#inbox",
-			"dir": null,
-			"appData": null
+			"dir": "",
+			"appData": []
 		},
 		{
 			"alias": "mail-compose",
+			"description": "Opens my work email with a compose message box opened.",
 			"url": "https://mail.google.com/mail/u/1/#inbox?compose=new",
-			"dir": null,
-			"appData": null
+			"dir": "",
+			"appData": []
 		},
 		{
 			"alias": "notes",
+			"description": "Opens google keep.",
 			"url": "https://keep.google.com/u/0/",
-			"dir": null,
-			"appData": null
+			"dir": "",
+			"appData": []
 		},
 		{
 			"alias": "yt",
+			"description": "Opens youtube.",
 			"url": "https://youtube.com/",
-			"dir": null,
-			"appData": null
+			"dir": "",
+			"appData": []
 		},
 		{
 			"alias": "ex",
+			"description": "Opens Excalidraw.",
 			"url": "https://excalidraw.com/",
-			"dir": null,
-			"appData": null
+			"dir": "",
+			"appData": []
 		},
 		{
 			"alias": "shutdown",
-			"url": null,
-			"dir": null,
+			"description": "Shuts the computer down.",
+			"url": "",
+			"dir": "",
 			"appData": [
 				{
 					"app": "shutdown",
@@ -114,71 +127,76 @@
 		},
 		{
 			"alias": "edit-nvim",
-			"url": null,
+			"description": "Opens the source of nvim configuration of the system.",
+			"url": "",
 			"dir": "C:/Users/Nishchay/AppData/Local/nvim/",
 			"appData": [
 				{
 					"app": "git-bash",
-					"args": null
+					"args": []
 				},
 				{
 					"app": "nvim",
-					"args": null
+					"args": []
 				}
 			]
 		},
 		{
 			"alias": "portfolio",
-			"url": null,
+			"description": "Opens the source code of portfolio project.",
+			"url": "",
 			"dir": "D:/AK/Full Stack/portfolio/",
 			"appData": [
 				{
 					"app": "powershell",
-					"args": null
+					"args": []
 				},
 				{
 					"app": "git-bash",
-					"args": null
+					"args": []
 				},
 				{
 					"app": "nvim",
-					"args": null
+					"args": []
 				}
 			]
 		},
 		{
 			"alias": "blog",
-			"url": null,
+			"description": "Opens the source of blogs.",
+			"url": "",
 			"dir": "D:/AK/Blogs/",
 			"appData": [
 				{
 					"app": "git-bash",
-					"args": null
+					"args": []
 				},
 				{
 					"app": "nvim",
-					"args": null
+					"args": []
 				}
 			]
 		},
 		{
 			"alias": "question",
+			"description": "Opens the Enginuity website's question of the day.",
 			"url": "https://joinenginuity.com/question-of-day",
-			"dir": null,
-			"appData": null
+			"dir": "",
+			"appData": []
 		},
 		{
 			"alias": "raa",
-			"url": null,
+			"description": "Opens the source code of raa.",
+			"url": "",
 			"dir": "D:/AK/Full Stack/raa/",
 			"appData": [
 				{
 					"app": "git-bash",
-					"args": null
+					"args": []
 				},
 				{
 					"app": "nvim",
-					"args": null
+					"args": []
 				}
 			]
 		}
