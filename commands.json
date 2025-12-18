@@ -1,7 +1,8 @@
 {
 	"vars": {
 		"browser": "brave",
-		"terminals": "git-bash",
+		"terminal": "git-bash",
+		"editor": "nvim",
 		"dirs": [
 			{
 				"alias": "fast",
@@ -13,15 +14,17 @@
 		{
 			"alias": "edit",
 			"description": "Opens the source code of this CLI and a terminal window.",
-			"url": "",
-			"dir": "$fast",
-			"appData": [
+			"commands": [
 				{
-					"app": "git-bash",
+					"tool": "cd",
+					"args": ["$dir:fast"]
+				},
+				{
+					"tool": "$terminal",
 					"args": []
 				},
 				{
-					"app": "nvim",
+					"tool": "$editor",
 					"args": ["src/main.c"]
 				}
 			]
@@ -29,11 +32,13 @@
 		{
 			"alias": "edit-commands",
 			"description": "Opens the alias and commands list that we are following.",
-			"url": "",
-			"dir": "$fast",
-			"appData": [
+			"commands": [
 				{
-					"app": "nvim",
+					"tool": "cd",
+					"args": ["$dir:fast"]
+				},
+				{
+					"tool": "$editor",
 					"args": ["bin/commands.txt"]
 				}
 			]
@@ -41,102 +46,127 @@
 		{
 			"alias": "lc",
 			"description": "Opens leetcode problemset page.",
-			"url": "https://leetcode.com/problemset/",
-			"dir": "",
-			"appData": []
+			"commands": [
+				{
+					"tool": "$browser",
+					"args": ["https://leetcode.com/problemset/"]
+				}
+			]
 		},
 		{
 			"alias": "x",
 			"description": "Opens Twitter (now known as X).",
-			"url": "https://x.com/",
-			"dir": "",
-			"appData": []
+			"commands": [
+				{
+					"tool": "$browser",
+					"args": ["https://x.com/"]
+				}
+			]
 		},
 		{
 			"alias": "mt",
 			"description": "Opens MonkeyType shortcut on desktop.",
-			"url": "",
-			"dir": "C:/Users/Nishchay/Desktop/",
-			"appData": [
+			"commands": [
 				{
-					"app": "start",
-					"args": ["", "Monkeytype.lnk"]
+					"tool": "start",
+					"args": ["", "C:/Users/Nishchay/Desktop/Monkeytype.lnk"]
 				}
 			]
 		},
 		{
 			"alias": "typerush",
 			"description": "Opens typerush",
-			"url": "https://typerush.com/account.html?play=1",
-			"dir": "",
-			"appData": []
+			"commands": [
+				{
+					"tool": "$browser",
+					"args": ["https://typerush.com/account.html?play=1"]
+				}
+			]
 		},
 		{
 			"alias": "overleaf",
 			"description": "Opens overleaf projects page.",
-			"url": "https://overleaf.com/project/",
-			"dir": "",
-			"appData": []
+			"commands": [
+				{
+					"tool": "$browser",
+					"args": ["https://overleaf.com/project/"]
+				}
+			]
 		},
 		{
 			"alias": "mail",
 			"description": "Opens my work email.",
-			"url": "https://mail.google.com/mail/u/1/#inbox",
-			"dir": "",
-			"appData": []
+			"commands": [
+				{
+					"tool": "$browser",
+					"args": ["https://mail.google.com/mail/u/1/#inbox"]
+				}
+			]
 		},
 		{
 			"alias": "mail-compose",
 			"description": "Opens my work email with a compose message box opened.",
-			"url": "https://mail.google.com/mail/u/1/#inbox?compose=new",
-			"dir": "",
-			"appData": []
+			"commands": [
+				{
+					"tool": "$browser",
+					"args": ["https://mail.google.com/mail/u/1/#inbox?compose=new"]
+				}
+			]
 		},
 		{
 			"alias": "notes",
 			"description": "Opens google keep.",
-			"url": "https://keep.google.com/u/0/",
-			"dir": "",
-			"appData": []
+			"commands": [
+				{
+					"tool": "$browser",
+					"args": ["https://keep.google.com/u/0/"]
+				}
+			]
 		},
 		{
 			"alias": "yt",
 			"description": "Opens youtube.",
-			"url": "https://youtube.com/",
-			"dir": "",
-			"appData": []
+			"commands": [
+				{
+					"tool": "$browser",
+					"args": ["https://youtube.com/"]
+				}
+			]
 		},
 		{
 			"alias": "ex",
 			"description": "Opens Excalidraw.",
-			"url": "https://excalidraw.com/",
-			"dir": "",
-			"appData": []
+			"commands": [
+				{
+					"tool": "$browser",
+					"args": ["https://excalidraw.com/"]
+				}
+			]
 		},
 		{
 			"alias": "shutdown",
 			"description": "Shuts the computer down.",
-			"url": "",
-			"dir": "",
-			"appData": [
+			"commands": [
 				{
-					"app": "shutdown",
+					"tool": "shutdown",
 					"args": ["/s", "/t", "0"]
 				}
 			]
 		},
 		{
-			"alias": "edit-nvim",
-			"description": "Opens the source of nvim configuration of the system.",
-			"url": "",
-			"dir": "C:/Users/Nishchay/AppData/Local/nvim/",
-			"appData": [
+			"alias": "edit-$editor",
+			"description": "Opens the source of $editor configuration of the system.",
+			"commands": [
 				{
-					"app": "git-bash",
+					"tool": "cd",
+					"args": ["C:/Users/Nishchay/AppData/Local/$editor/"]
+				},
+				{
+					"tool": "$terminal",
 					"args": []
 				},
 				{
-					"app": "nvim",
+					"tool": "$editor",
 					"args": []
 				}
 			]
@@ -144,19 +174,21 @@
 		{
 			"alias": "portfolio",
 			"description": "Opens the source code of portfolio project.",
-			"url": "",
-			"dir": "D:/AK/Full Stack/portfolio/",
-			"appData": [
+			"commands": [
 				{
-					"app": "powershell",
+					"tool": "cd",
+					"args": ["D:/AK/Full Stack/portfolio/"]
+				},
+				{
+					"tool": "$terminal",
 					"args": []
 				},
 				{
-					"app": "git-bash",
+					"tool": "$terminal",
 					"args": []
 				},
 				{
-					"app": "nvim",
+					"tool": "$editor",
 					"args": []
 				}
 			]
@@ -164,15 +196,17 @@
 		{
 			"alias": "blog",
 			"description": "Opens the source of blogs.",
-			"url": "",
-			"dir": "D:/AK/Blogs/",
-			"appData": [
+			"commands": [
 				{
-					"app": "git-bash",
+					"tool": "cd",
+					"args": ["D:/AK/Blogs/"]
+				},
+				{
+					"tool": "$terminal",
 					"args": []
 				},
 				{
-					"app": "nvim",
+					"tool": "$editor",
 					"args": []
 				}
 			]
@@ -180,22 +214,27 @@
 		{
 			"alias": "question",
 			"description": "Opens the Enginuity website's question of the day.",
-			"url": "https://joinenginuity.com/question-of-day",
-			"dir": "",
-			"appData": []
+			"commands": [
+				{
+					"tool": "$browser",
+					"args": ["https://joinenginuity.com/question-of-day"]
+				}
+			]
 		},
 		{
 			"alias": "raa",
 			"description": "Opens the source code of raa.",
-			"url": "",
-			"dir": "D:/AK/Full Stack/raa/",
-			"appData": [
+			"commands": [
 				{
-					"app": "git-bash",
+					"tool": "cd",
+					"args": ["D:/AK/Full Stack/raa/"]
+				},
+				{
+					"tool": "$terminal",
 					"args": []
 				},
 				{
-					"app": "nvim",
+					"tool": "$editor",
 					"args": []
 				}
 			]

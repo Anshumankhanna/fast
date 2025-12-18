@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 )
@@ -16,10 +17,13 @@ func main() {
 
 	var aliasData AliasData
 
-	if err := aliasData.FillFromJson(); err != nil {
+	if err := aliasData.FillFromJson("commands.json"); err != nil {
 		log.Fatal(err)
 		os.Exit(1)
 	}
+
+	fmt.Print(aliasData.String())
+
 	if err := aliasData.Run(os.Args[1]); err != nil {
 		log.Fatal(err)
 		os.Exit(1)
