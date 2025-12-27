@@ -47,17 +47,17 @@ type AliasData struct {
 }
 
 // We are encapsulating the extraction of JSON data so that this memory is freed when we move out of this scope since we do not require the raw JSON data as []bytes or the JsonDataType that we create after the extraction of values from it.
-func (aliasData *AliasData) FillFromJson(filepath string) (err error) {
+func (aliasData *AliasData) FillFromJson(filepath string) error {
 	jsonBytes, err := os.ReadFile(filepath)
 	if err != nil {
 		log.Fatalf("Error reading JSON file %s: %v", filepath, err)
-		return
+		return err
 	}
 
 	var jsonMap JsonDataType
 	if err = json.Unmarshal(jsonBytes, &jsonMap); err != nil {
 		log.Fatalf("Error fitting the json data into the jsonMap %v", err)
-		return
+		return err
 	}
 
 	// We still have to initialise them even though we mentioned them as the return values
@@ -79,11 +79,11 @@ func (aliasData *AliasData) FillFromJson(filepath string) (err error) {
 		}
 	}
 
-	return
+	return nil
 }
 
-func (aliasData *AliasData) String() (output string) {
-	output = fmt.Sprintf("Browser: %s\nTerminal: %s\nEditor: %s\n", aliasData.Browser, aliasData.Terminal, aliasData.Editor)
+func (aliasData *AliasData) String() string {
+	output := fmt.Sprintf("Browser: %s\nTerminal: %s\nEditor: %s\n", aliasData.Browser, aliasData.Terminal, aliasData.Editor)
 
 	output = fmt.Sprintln(output, "DirMap:")
 	for key, value := range aliasData.DirMap {
@@ -95,7 +95,7 @@ func (aliasData *AliasData) String() (output string) {
 		output = fmt.Sprintf("%s%v\n%v\n", output, key, value)
 	}
 
-	return
+	return output
 }
 
 func (aliases *AliasData) Run(alias string) error {
@@ -107,8 +107,6 @@ func (aliases *AliasData) Run(alias string) error {
 	if len(commandData.Commands) == 0 {
 		return errors.New("There is not set of commands provided.")
 	}
-
-	return nil
 
 	commandLine := []string{"git-bash"}
 
